@@ -24,7 +24,7 @@ public extension NSObject {
         var keys:Array<String> = Array()
         let mirror = Mirror(reflecting: self)
         for (_, attr) in mirror.children.enumerated() {
-            if let property_name = attr.label as String! {
+            if let property_name = attr.label as String? {
                 keys.append(property_name)
             }
         }
@@ -41,7 +41,7 @@ public extension NSObject {
         let mirror = Mirror(reflecting: self)
         for (_, attr) in mirror.children.enumerated() {
             
-            if let property_name = attr.label as String! {
+            if let property_name = attr.label as String? {
                 dictionary[property_name] = attr.value
             }
         }
